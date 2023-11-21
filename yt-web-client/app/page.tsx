@@ -10,8 +10,8 @@ export default async function Home() {
   return (
     <main>
       {
-        videos.map((video, index) => (
-          <Link key={index} href={`/watch?v=${video.filename}`}>
+        videos.map((video) => (
+          <Link key={video.id} href={`/watch?v=${video.filename}`}>
             <Image src={'/thumbnail.png'} alt='video' width={120} height={80}
               className={styles.thumbnail} />
           </Link>
@@ -21,3 +21,4 @@ export default async function Home() {
   )
 }
 
+export const revalidate = 30;
